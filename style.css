@@ -1,0 +1,147 @@
+@charset "utf-8";
+/* @charset "utf-8"; Este comando diz respeito ao conjunto de caracteres que stá sendo utilizado em uma página. Deve sempre estar presente no inicio dos docs css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 1.3m;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffb6c170;
+}
+a{
+    color: #333;
+    text-decoration: none;
+}
+.main-header{
+    background-color: #FFB6C1;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-items: center;
+    text-align: center;
+    padding: 2em;
+    margin-bottom: 30px;
+}
+.main-header h1{
+    color: rgb(255, 255, 255);
+    font-size: 2em;
+    margin-bottom: 1.2em;
+    line-height: 1.2em;
+}
+.main-header h1 span{
+    color:#faa70c;
+}
+.main-header p{
+    text-align: justify;
+    text-indent: 45px;
+    margin-right: 130px;
+    margin-left: 130px;
+}
+.container{
+    /*determina a largura máxima */
+    max-width: 1100px;
+    /* margin autormática é dapatativa de acordo com o tamanho da página */
+    margin: auto;
+    /* A propriedade overflow especifica quando o conteúdo de um elemento de nível de bloco deve ser cortado, exibido com barras de rolagem ou se transborda do elemento. */
+    overflow: auto;
+    padding: 0 2em;
+}
+p{
+    text-align: justify;
+    text-indent: 45px;
+}
+img{
+    /* coloca a imagem em 100% de ocupação do espaço disponibilizado pelo elemento pai, neste caso é o container */
+    width: 100%;
+    border-radius: 5px;
+}
+.card{
+    /* display grid imagina a página como se fosse uma grade. */
+    display: grid;
+    /* organiza as informações do grid em colunas. repeat(2, 1fr) significa repetir a informação em duas colunas, onde cada coluna ocupa uma fração da informação */
+    grid-template-columns: repeat(2, 1fr);
+    /* espaçamento entre os elementos. este espaçamento é feito em todos os sentidos, como uma margin geral. ele é esxlusivo do grid */
+    gap: 2em;
+    background-color: #FFC0CB;
+    margin-bottom: 2em;
+    border-radius: 5px;
+}
+.card div{
+    padding: 2em;
+}
+.card h3{
+    margin-bottom: 1em;
+}
+/* utilizado para selecionar um filho em espesífico do class. é possível indicar com o numero ordinal, mas neste caso o evem determina que será um elemento sim e outro não*/
+.card:nth-child(even) img{
+    /* ordena a informação so site     */
+    order: 2;
+}
+.btm{
+    background: #000;
+    color: #f9f9f9;
+    padding: 0.6em 1.6em;
+    margin-top: 2em;
+    display: inline-block;
+    /*mantém o cursor como padrão quando o mouse passar por cima do conteúdo. */
+    cursor: default;
+}
+/* Determina o que vai ocorrer quando o mouse estiver sob a classe (elemento)*/
+.btm:hover{
+    background-color: #f1778a;
+    border-radius: 9px; 
+
+}
+.galeria{
+    margin: 2em;
+    height: 20em;
+    gap: 0.5em;
+    /* coloca todos os elementos um do lado do outro */
+    display:flex;
+}
+.galeria div{
+    border-radius: 5px;
+    flex: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* faz o movimento de transição */
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.galeria div:hover{
+    flex: 3;
+}
+.galeria:hover div:not(:hover){
+    filter: saturate(70%) blur(1px);
+}
+.textofim p {
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+.textofim p mark{
+    background-color: #FFC0CB;
+    border-radius: 7px;
+    padding: 10px 10px;
+}
+footer{
+    text-align: left;
+    padding: 30px 100px;
+    background-color: #FFB6C1;
+}
+
+/* filtros diferentes e a forma de atribuir valor a cada um deles. 
+filter: blur(5px);
+filter: brightness(0.4);
+filter: contrast(200%);
+filter: drop-shadow(16px 16px 20px blue);
+filter: grayscale(50%);
+filter: hue-rotate(90deg);
+filter: invert(75%);
+filter: opacity(25%);
+filter: saturate(30%);
+filter: sepia(60%); */
+/* este site possui os códifos para aplicar animação nos conteúdos da página https://michalsnik.github.io/aos/ */
